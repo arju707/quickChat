@@ -1,9 +1,15 @@
 import React from 'react'
+import assets from '../assets/assets'
 
 const ProfilePage = () => {
   return (
-    <div>
-        <h1>ProfilePage</h1>
+    <div className=''>
+
+     
+<h1>ProfilePage</h1>
+      
+
+     
     </div>
   )
 }
