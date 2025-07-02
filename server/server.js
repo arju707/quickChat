@@ -32,13 +32,15 @@ io.on("connection",(socket)=>{
 
     //emit online usetrs to all connect ones 
 
-    io.emit("getOnlineUsers ",Object.keys(userSocketMap));
+    io.emit("getOnlineUsers", Object.keys(userSocketMap));
+
 
 
     socket.on("disconnect", ()=>{
         console.log("user disconnected", userId);
         delete userSocketMap[userId];
-        io.emit("getOnlineUsers", Object.keys(userSocketMap))
+        io.emit("getOnlineUsers", Object.keys(userSocketMap)); 
+
     })
 
 })

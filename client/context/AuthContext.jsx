@@ -76,14 +76,16 @@ const logout = async ()=>{
 
 //update profile function to handle user profile update 
 
-const updateProfile = async ()=>{
+const updateProfile = async (body)=>{
     try {
-        const {data} = await axios.put("/api/auth.update-profile",body)
+        const { data } = await axios.put("/api/auth/update-profile", body)
+        console.log("profile updated successfully")
         if(data.success){
             setAuthUser(data.user);
             toast.success("profile updated success fully ")
         }
     } catch (error) {
+        console.log("profile not updated catch block running")
 
         toast.error(error.message)
         
